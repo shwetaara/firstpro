@@ -1,15 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>BVB College</title>
-</head>
+{% extends 'blog/base.html' %}
+{% block content %}
 
-<body>
 
-   <div>
-       <h1>Information Science</h1>
-   </div>
 
-</body>
-</html>
+{% for Post in Posts %}
+ <div>
+     <p>published: {{ Post.published_date}}</p>
+     <h1><a href="{% url 'Post_detail'  pk=Post.pk %}">{{ Post.title }}</a> </h1>
+     <p>{{Post.text|linebreaksbr }}</p>
+
+ </div>
+{% endfor %}
+{% endblock %}

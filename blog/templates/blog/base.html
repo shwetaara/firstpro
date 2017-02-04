@@ -1,0 +1,18 @@
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BVB COLLEGE</title>
+    <link rel="stylesheet" href="{% static 'css/1.css' %}">
+</head>
+<a>
+<a href="{% url 'Post_new' %}"
+   class="top-menu"><span class="glyphicon glypicon-plus"></span></a>
+    <a href="{% url 'Post_draft_list' %}"
+       class="glyphicon glyphicon-edit"></a>
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

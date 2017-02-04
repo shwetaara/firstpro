@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<a class="btn btn-default" href="{% url 'Post_publish' pk=Post.pk %}">Publish</a>
+<a class="btn btn-default" href="{% url 'Post_edit' pk=Post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+<a class="btn btn-default" href="{% url 'Post_remove' pk=Post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+       <div class="Postc">
+           {% if Post.published_date %}
+           <div class="date">
+               {{ Postc.published_date }}
+           </div>
+           {% endif %}
+
+           <h1>{{ Postc.title}}</h1>
+           <p>{{ Postc.text|linebreaksbr }}</p>
+       </div>
+{% endblock %}
